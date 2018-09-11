@@ -1,0 +1,17 @@
+server:
+  port: 9411
+spring:
+  application:
+    name: zipkin-server-es
+zipkin:
+  storage:
+    type: elasticsearch
+    StorageComponent: elasticsearch
+    elasticsearch:
+      cluster: elasticsearch
+      hosts: 192.168.10.170:9200,192.168.10.171:9200,192.168.10.172:9200
+      max-requests: 64
+      index: zipkin
+      index-shards: 5
+      index-replicas: 1
+      dateSeparator: .
